@@ -48,9 +48,9 @@ function clearPage() {
 }
 
 function showQuestion() {
-  const headerTemplate = `<h2 class="title">%title%</h2>`;
+  const headerTemplate = `<h2 class="title">% title %</h2>`;
   const title = headerTemplate.replace(
-    "%title%",
+    "% title %",
     questions[questionIndex]["question"]
   );
 
@@ -62,11 +62,11 @@ function showQuestion() {
     const questionTemplate = `<li>
 		<label>
 			<input value="${answerNumber}" type="radio" class="answer" name="answer" />
-			<span>%answer%</span>
+			<span>% answer %</span>
 		</label>
 	</li>`;
 
-    const answerHTML = questionTemplate.replace("%answer%", answerText);
+    const answerHTML = questionTemplate.replace("% answer %", answerText);
     listContainer.innerHTML += answerHTML;
   }
 }
@@ -100,9 +100,9 @@ function checkAnswer() {
 function showResults() {
   console.log("Result score: ", score);
 
-  const resultsTemplate = `<h2 class="title">%title%</h2>
-  <h3 class="summary">%message%</h3>
-  <p class="result">%result%</p>`;
+  const resultsTemplate = `<h2 class="title">% title %</h2>
+  <h3 class="summary">% message %</h3>
+  <p class="result">% result %</p>`;
 
   let title, message;
   if (score === questions.length) {
@@ -119,9 +119,9 @@ function showResults() {
   let result = `${score} из ${questions.length}`;
 
   const finalMessage = resultsTemplate
-    .replace("%title%", title)
-    .replace("%message%", message)
-    .replace("%result%", result);
+    .replace("% title %", title)
+    .replace("% message %", message)
+    .replace("% result %", result);
 
   headerContainer.innerHTML = finalMessage;
 
